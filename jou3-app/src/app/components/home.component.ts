@@ -17,6 +17,7 @@ import { HomeAdapter } from 'src/app/redux/home/adapter';
           class="input"
           [label]="input.label"
           [placeholder]="input.placeholder"
+          [type]="'text'"
         ></app-input>
 
         <app-input
@@ -24,6 +25,7 @@ import { HomeAdapter } from 'src/app/redux/home/adapter';
           class="input"
           [label]="input.label"
           [placeholder]="input.placeholder"
+          [type]="'date'"
         ></app-input>
       </div>
 
@@ -32,9 +34,19 @@ import { HomeAdapter } from 'src/app/redux/home/adapter';
         *ngFor="let input of (inputs$ | async).slice(2, 5); index as i"
       >
         <app-input
+          *ngIf="!isEntry(i)"
           class="input"
           [label]="input.label"
           [placeholder]="input.placeholder"
+          [type]="'text'"
+        ></app-input>
+
+        <app-input
+          *ngIf="isEntry(i)"
+          class="input"
+          [label]="input.label"
+          [placeholder]="input.placeholder"
+          [type]="'textarea'"
         ></app-input>
       </div>
     </div>
@@ -77,8 +89,7 @@ export class HomeComponent implements OnInit {
     this.inputs$ = this.homeAdapter.getInputs();
   }
 
-  isNewRow(i): boolean {
-    console.log(i);
-    return i !== 1;
+  isEntry(i): boolean {
+    return i === 2;
   }
 }

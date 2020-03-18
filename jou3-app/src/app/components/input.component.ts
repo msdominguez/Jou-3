@@ -5,12 +5,23 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
   template: `
     <label class="input-label">{{ label }}</label>
     <input
-      [class.long]="isLong()"
-      [class.short]="isShort()"
-      [class.full]="isFull()"
+      *ngIf="type === 'text'"
       class="input"
       placeholder="{{ placeholder }}"
     />
+
+    <input
+      *ngIf="type === 'date'"
+      type="date"
+      class="input"
+      placeholder="{{ placeholder }}"
+    />
+
+    <textarea
+      *ngIf="type === 'textarea'"
+      class="input textarea"
+      placeholder="{{ placeholder }}"
+    ></textarea>
   `,
   styles: [
     `
@@ -21,7 +32,7 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
       .input-label {
         color: var(--jou-pink-8);
-        font-size: 1rem;
+        font-size: 0.75rem;
         text-transform: uppercase;
         margin: 0 0 0.5rem 0.5rem;
         letter-spacing: 1px;
@@ -33,10 +44,11 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
         border-radius: 0.5rem;
         background: none;
         height: 2rem;
-        font-size: 1rem;
+        font-size: 0.938rem;
         padding: 0.25rem 1rem;
         letter-spacing: 0.5px;
         transition: border 0.5s;
+        font-family: Inter;
       }
 
       .input:focus {
@@ -44,16 +56,22 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
         outline: none;
       }
 
-      .long {
-        width: 30rem;
+      .textarea {
+        min-height: 30rem;
+        padding: 0.5rem 1rem;
+        resize: vertical;
       }
 
-      .short {
-        width: 25rem;
+      ::-webkit-resizer {
+        border-bottom-right-radius: 20px;
+        border-top-left-radius: 50px;
+        border-top: 1px dashed var(--jou-pink-7);
+        border-left: 1px dashed var(--jou-pink-7);
       }
 
-      .full {
-        width: 100%;
+      ::-webkit-input-placeholder {
+        font-style: italic;
+        color: var(--jou-pink-5);
       }
     `
   ],
@@ -62,19 +80,7 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 export class InputComponent {
   @Input() label: string;
   @Input() placeholder: string;
-  @Input() width: string;
+  @Input() type: string;
 
   constructor() {}
-
-  isLong(): boolean {
-    return this.width === "long";
-  }
-
-  isShort(): boolean {
-    return this.width === "short";
-  }
-
-  isFull(): boolean {
-    return this.width === "full";
-  }
 }

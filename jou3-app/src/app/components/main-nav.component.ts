@@ -5,12 +5,28 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   template: `
     <div class="menu-container">
       <img src="/assets/logo.svg" />
-      <img class="icon" src="/assets/new.svg" />
-      <img class="icon" src="/assets/view-entries.svg" />
-      <img class="icon" src="/assets/hearts.svg" />
+
+      <div class="icon-container">
+        <img class="icon" src="/assets/new.svg" />
+      </div>
+
+      <div class="icon-container">
+        <img class="icon" src="/assets/view-entries.svg" />
+      </div>
+
+      <div class="icon-container">
+        <img class="icon" src="/assets/hearts.svg" />
+      </div>
+
       <hr class="divider" />
-      <img class="icon" src="/assets/save.svg" />
-      <img class="icon" src="/assets/erase.svg" />
+
+      <div class="icon-container">
+        <img class="icon" src="/assets/save.svg" />
+      </div>
+
+      <div class="icon-container">
+        <img class="icon" src="/assets/erase.svg" />
+      </div>
     </div>
   `,
   styles: [
@@ -31,9 +47,18 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
         margin: 1rem 1rem 0 0;
       }
 
+      .icon-container {
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+      }
+
+      .icon-container:hover {
+        background-color: var(--jou-pink-4);
+      }
+
       .icon {
         margin: 1rem 0;
-        cursor: pointer;
       }
 
       .divider {
