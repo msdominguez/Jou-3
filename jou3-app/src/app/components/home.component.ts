@@ -70,23 +70,15 @@ import { HomeAdapter } from 'src/app/redux/home/adapter';
 })
 export class HomeComponent implements OnInit {
   inputs$: Observable<HomeInput[]>;
-  // placeholders$: Observable<string[]>;
 
   constructor(private homeAdapter: HomeAdapter) {}
 
   ngOnInit() {
     this.inputs$ = this.homeAdapter.getInputs();
-    // this.placeholders$ = this.homeAdapter.getInputPlaceholders();
   }
 
   isNewRow(i): boolean {
     console.log(i);
     return i !== 1;
   }
-
-  // model:
-  // input.label
-  // input.placeholder
-
-  // then i can use one array instead of 2
 }
