@@ -6,7 +6,10 @@ import { ReduxModule } from 'src/app/redux/redux.module';
 
 import { HomeComponent } from './home.component';
 import { InputComponent } from './input.component';
+import { ListEntriesComponent } from './list-entries.component';
 import { MainNavComponent } from './main-nav.component';
+import { SvgComponent } from './svg-icon.component';
+import { ViewEntriesComponent } from './view-entries.component';
 
 // import { ServicesModule } from 'src/app/services/services.module';
 
@@ -21,7 +24,14 @@ import { MainNavComponent } from './main-nav.component';
     // ServicesModule
   ],
   // schemas
-  declarations: [HomeComponent, MainNavComponent, InputComponent]
+  declarations: [
+    HomeComponent,
+    MainNavComponent,
+    InputComponent,
+    ViewEntriesComponent,
+    ListEntriesComponent,
+    SvgComponent
+  ]
   // exports
   // entryComponents
 })

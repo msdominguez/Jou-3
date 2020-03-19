@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 
+import { EntriesAdapter } from './entries/adapter';
 import { HomeAdapter } from './home/adapter';
 import { HOME_REDUCER_TOKEN, reducers as homeReducers } from './home/reducer';
 
@@ -17,7 +18,8 @@ import { HOME_REDUCER_TOKEN, reducers as homeReducers } from './home/reducer';
   ],
   providers: [
     { provide: HOME_REDUCER_TOKEN, useFactory: homeReducers },
-    HomeAdapter
+    HomeAdapter,
+    EntriesAdapter
   ]
 })
 export class ReduxModule {}

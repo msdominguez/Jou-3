@@ -7,9 +7,10 @@ import { ComponentsModule } from 'src/app/components/components.module';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { SvgDefinitionsComponent } from './svg-definitions.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, SvgDefinitionsComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

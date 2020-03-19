@@ -6,7 +6,7 @@ import { HomeAdapter } from 'src/app/redux/home/adapter';
 @Component({
   selector: "app-home",
   template: `
-    <app-main-nav></app-main-nav>
+    <app-main-nav [showSecondaryOptions]="true"></app-main-nav>
 
     <div class="inputs">
       <div
