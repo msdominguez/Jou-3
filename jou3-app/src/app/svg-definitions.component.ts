@@ -10,6 +10,24 @@ import { Component } from '@angular/core';
       class="hidden"
     >
       <defs>
+        <symbol id="chevron-down" viewBox="0 0 19 11">
+          <path
+            d="M2 2L9.5 9.5L17 2"
+            stroke="var(--jou-pink-5)"
+            stroke-width="3"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </symbol>
+        <symbol id="chevron-up" viewBox="0 0 19 11">
+          <path
+            d="M17 9.5L9.5 2L2 9.5"
+            stroke="var(--jou-pink-5)"
+            stroke-width="3"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </symbol>
         <symbol id="entries">
           <path
             d="M1 1H10C11.5913 1 13.1174 1.65555 14.2426 2.82245C15.3679

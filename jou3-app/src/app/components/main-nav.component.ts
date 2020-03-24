@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
-  selector: "app-main-nav",
+  selector: "jou-main-nav",
   template: `
     <div class="menu-container">
       <a href="/">
@@ -10,54 +10,54 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
       <a href="/">
         <div class="icon-container">
-          <svg-icon
+          <jou-svg-icon
             class="icon"
             [name]="'new'"
             [width]="32"
             [height]="32"
-          ></svg-icon>
+          ></jou-svg-icon>
         </div>
       </a>
 
       <a href="/viewentries">
         <div class="icon-container">
-          <svg-icon
+          <jou-svg-icon
             class="icon"
             [name]="'entries'"
             [width]="32"
             [height]="30"
-          ></svg-icon>
+          ></jou-svg-icon>
         </div>
       </a>
 
       <div class="icon-container">
-        <svg-icon
+        <jou-svg-icon
           class="icon"
           [name]="'hearts'"
           [width]="41"
           [height]="29"
-        ></svg-icon>
+        ></jou-svg-icon>
       </div>
 
       <ng-container *ngIf="showSecondaryOptions">
         <hr class="divider" />
 
         <div class="icon-container">
-          <svg-icon
+          <jou-svg-icon
             class="icon"
             [name]="'save'"
             [width]="32"
             [height]="32"
-          ></svg-icon>
+          ></jou-svg-icon>
         </div>
 
         <div class="icon-container">
-          <svg-icon
+          <jou-svg-icon
             class="icon"
             [name]="'erase'"
             [width]="32"
             [height]="34"
-          ></svg-icon>
+          ></jou-svg-icon>
         </div>
       </ng-container>
     </div>

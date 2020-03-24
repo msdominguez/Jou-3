@@ -5,30 +5,33 @@ import { ListEntry } from 'src/app/models';
 import { EntriesAdapter } from './../redux/entries/adapter';
 
 @Component({
-  selector: "app-list-entries",
+  selector: "jou-list-entries",
   template: `
     <div class="list-entry" *ngFor="let entry of entries$ | async; index as i">
-      <div class="date-time-heart">
-        <div class="date-time">
-          <label class="date">{{ entry.date }}</label>
-          <label class="time">{{ entry.time }}</label>
+      <jou-checkbox class="checkbox"></jou-checkbox>
+      <div class="entry-right">
+        <div class="date-time-heart">
+          <div class="date-time">
+            <label class="date">{{ entry.date }}</label>
+            <label class="time">• {{ entry.time }}</label>
+          </div>
+
+          <jou-svg-icon
+            class="heart-icon"
+            [name]="'heart'"
+            [width]="23"
+            [height]="21"
+            [fill]="getIconFill(entry, i)"
+            (clicked)="onClick($event, entry)"
+            (mouseEntered)="onMouseEnter($event, i)"
+            (mouseExited)="onMouseExit($event, i)"
+          ></jou-svg-icon>
         </div>
 
-        <svg-icon
-          class="heart-icon"
-          [name]="'heart'"
-          [width]="23"
-          [height]="21"
-          [fill]="getIconFill(entry, i)"
-          (clicked)="onClick($event, entry)"
-          (mouseEntered)="onMouseEnter($event, i)"
-          (mouseExited)="onMouseExit($event, i)"
-        ></svg-icon>
-      </div>
-
-      <div class="title-entry">
-        <label class="title">{{ entry.title }}</label>
-        <p class="entry">{{ entry.entry }}</p>
+        <div class="title-entry">
+          <label class="title">{{ entry.title }}</label>
+          <p class="entry">{{ entry.entry }}</p>
+        </div>
       </div>
     </div>
   `,
@@ -38,13 +41,14 @@ import { EntriesAdapter } from './../redux/entries/adapter';
         height: 100vh;
         display: flex;
         flex-direction: column;
-        width: calc(60% + 8rem);
+        width: 100%;
       }
 
       .list-entry {
         display: flex;
-        flex-direction: column;
-        padding: 1rem 0.5rem;
+        align-items: center;
+        padding: 1rem;
+        height: 6rem;
       }
 
       .list-entry:nth-child(odd) {
@@ -53,6 +57,16 @@ import { EntriesAdapter } from './../redux/entries/adapter';
 
       .list-entry:nth-child(even) {
         background-color: var(--jou-pink-4);
+      }
+
+      .entry-right {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .checkbox {
+        margin-right: 1rem;
       }
 
       .date-time-heart {

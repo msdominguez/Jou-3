@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
-  selector: "app-input",
+  selector: "jou-input",
   template: `
     <label class="input-label">{{ label }}</label>
     <input

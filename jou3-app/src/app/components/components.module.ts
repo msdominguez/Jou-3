@@ -4,6 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { ReduxModule } from 'src/app/redux/redux.module';
 
+import { CheckboxComponent } from './checkbox.component';
+import { FiltersComponent } from './filters.component';
 import { HomeComponent } from './home.component';
 import { InputComponent } from './input.component';
 import { ListEntriesComponent } from './list-entries.component';
@@ -30,7 +32,9 @@ import { ViewEntriesComponent } from './view-entries.component';
     InputComponent,
     ViewEntriesComponent,
     ListEntriesComponent,
-    SvgComponent
+    SvgComponent,
+    CheckboxComponent,
+    FiltersComponent
   ]
   // exports
   // entryComponents

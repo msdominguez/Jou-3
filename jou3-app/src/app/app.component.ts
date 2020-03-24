@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
     <svg-definitions></svg-definitions>
     <router-outlet></router-outlet>
   `,
-  styleUrls: ["./app.component.scss"]
+  styles: [``]
 })
 export class AppComponent {
   title = "jou3-app";

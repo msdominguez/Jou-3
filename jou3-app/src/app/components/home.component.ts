@@ -4,50 +4,50 @@ import { HomeInput } from 'src/app/models';
 import { HomeAdapter } from 'src/app/redux/home/adapter';
 
 @Component({
-  selector: "app-home",
+  selector: "jou-home",
   template: `
-    <app-main-nav [showSecondaryOptions]="true"></app-main-nav>
+    <jou-main-nav [showSecondaryOptions]="true"></jou-main-nav>
 
     <div class="inputs">
       <div
         class="input-row"
         *ngFor="let input of (inputs$ | async).slice(0, 1); index as i"
       >
-        <app-input
+        <jou-input
           class="input"
           [label]="input.label"
           [placeholder]="input.placeholder"
           [type]="'text'"
-        ></app-input>
+        ></jou-input>
 
-        <app-input
+        <jou-input
           *ngFor="let input of (inputs$ | async).slice(1, 2); index as i"
           class="input"
           [label]="input.label"
           [placeholder]="input.placeholder"
           [type]="'date'"
-        ></app-input>
+        ></jou-input>
       </div>
 
       <div
         class="input-row"
         *ngFor="let input of (inputs$ | async).slice(2, 5); index as i"
       >
-        <app-input
+        <jou-input
           *ngIf="!isEntry(i)"
           class="input"
           [label]="input.label"
           [placeholder]="input.placeholder"
           [type]="'text'"
-        ></app-input>
+        ></jou-input>
 
-        <app-input
+        <jou-input
           *ngIf="isEntry(i)"
           class="input"
           [label]="input.label"
           [placeholder]="input.placeholder"
           [type]="'textarea'"
-        ></app-input>
+        ></jou-input>
       </div>
     </div>
   `,

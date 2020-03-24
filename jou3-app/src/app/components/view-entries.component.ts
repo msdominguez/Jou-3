@@ -1,10 +1,14 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
-  selector: "app-view-entries",
+  selector: "jou-view-entries",
   template: `
-    <app-main-nav [showSecondaryOptions]="false"></app-main-nav>
-    <app-list-entries></app-list-entries>
+    <jou-main-nav [showSecondaryOptions]="false"></jou-main-nav>
+
+    <div class="filters-entries">
+      <jou-filters></jou-filters>
+      <jou-list-entries></jou-list-entries>
+    </div>
   `,
   styles: [
     `
@@ -12,6 +16,12 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
         width: 100vw;
         height: 100vh;
         display: flex;
+      }
+
+      .filters-entries {
+        display: flex;
+        width: calc(60% + 8rem);
+        flex-direction: column;
       }
     `
   ],

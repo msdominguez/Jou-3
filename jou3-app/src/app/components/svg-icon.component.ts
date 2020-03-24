@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
-  selector: "svg-icon",
+  selector: "jou-svg-icon",
   template: `
     <svg
       version="1.1"
